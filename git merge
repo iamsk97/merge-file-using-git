@@ -1,0 +1,263 @@
+
+
+sawan@LAPTOP-ETPIK87G MINGW64 ~
+$ mkdir final
+
+sawan@LAPTOP-ETPIK87G MINGW64 ~
+$ cd final
+
+sawan@LAPTOP-ETPIK87G MINGW64 ~/final
+$ git init .
+Initialized empty Git repository in C:/Users/sawan/final/.git/
+
+sawan@LAPTOP-ETPIK87G MINGW64 ~/final (master)
+$ ls
+
+sawan@LAPTOP-ETPIK87G MINGW64 ~/final (master)
+$ ls -a
+./  ../  .git/
+
+sawan@LAPTOP-ETPIK87G MINGW64 ~/final (master)
+$ git branch
+
+sawan@LAPTOP-ETPIK87G MINGW64 ~/final (master)
+$ git branch -a
+
+sawan@LAPTOP-ETPIK87G MINGW64 ~/final (master)
+$ git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+
+sawan@LAPTOP-ETPIK87G MINGW64 ~/final (master)
+$ touch file1
+
+sawan@LAPTOP-ETPIK87G MINGW64 ~/final (master)
+$ ls
+file1
+
+sawan@LAPTOP-ETPIK87G MINGW64 ~/final (master)
+$ git add .
+
+sawan@LAPTOP-ETPIK87G MINGW64 ~/final (master)
+$ git commit -m "1st commit in master file1"
+[master (root-commit) dc9f1a9] 1st commit in master file1
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 file1
+
+sawan@LAPTOP-ETPIK87G MINGW64 ~/final (master)
+$ git log
+commit dc9f1a9eb3df0359583b1b6899e12cdda819aff5 (HEAD -> master)
+Author: iamsk97 <sawankashyap@gmail.com>
+Date:   Sat May 5 16:37:31 2018 +0530
+
+    1st commit in master file1
+
+sawan@LAPTOP-ETPIK87G MINGW64 ~/final (master)
+$ ls
+file1
+
+sawan@LAPTOP-ETPIK87G MINGW64 ~/final (master)
+$ git branch B1
+
+sawan@LAPTOP-ETPIK87G MINGW64 ~/final (master)
+$ git branch
+  B1
+* master
+
+sawan@LAPTOP-ETPIK87G MINGW64 ~/final (master)
+$ git checkout B1
+Switched to branch 'B1'
+
+sawan@LAPTOP-ETPIK87G MINGW64 ~/final (B1)
+$ git branch
+* B1
+  master
+
+sawan@LAPTOP-ETPIK87G MINGW64 ~/final (B1)
+$ vi file1
+
+sawan@LAPTOP-ETPIK87G MINGW64 ~/final (B1)
+$ git status
+On branch B1
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   file1
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+sawan@LAPTOP-ETPIK87G MINGW64 ~/final (B1)
+$ git add .
+warning: LF will be replaced by CRLF in file1.
+The file will have its original line endings in your working directory.
+
+sawan@LAPTOP-ETPIK87G MINGW64 ~/final (B1)
+$ git commit -m "commit from branch b1"
+[B1 3bc4bd6] commit from branch b1
+ 1 file changed, 1 insertion(+)
+
+sawan@LAPTOP-ETPIK87G MINGW64 ~/final (B1)
+$ git log
+commit 3bc4bd62fdbf8a8de720236467af553a0f880a79 (HEAD -> B1)
+Author: iamsk97 <sawankashyap@gmail.com>
+Date:   Sat May 5 16:43:54 2018 +0530
+
+    commit from branch b1
+
+commit dc9f1a9eb3df0359583b1b6899e12cdda819aff5 (master)
+Author: iamsk97 <sawankashyap@gmail.com>
+Date:   Sat May 5 16:37:31 2018 +0530
+
+    1st commit in master file1
+
+sawan@LAPTOP-ETPIK87G MINGW64 ~/final (B1)
+$ git branch s1
+
+sawan@LAPTOP-ETPIK87G MINGW64 ~/final (B1)
+$ git branch
+* B1
+  master
+  s1
+
+sawan@LAPTOP-ETPIK87G MINGW64 ~/final (B1)
+$ git checkout s1
+Switched to branch 's1'
+
+sawan@LAPTOP-ETPIK87G MINGW64 ~/final (s1)
+$ ls
+file1
+
+sawan@LAPTOP-ETPIK87G MINGW64 ~/final (s1)
+$ echo "file 2" > file2d
+
+sawan@LAPTOP-ETPIK87G MINGW64 ~/final (s1)
+$ ls
+file1  file2d
+
+sawan@LAPTOP-ETPIK87G MINGW64 ~/final (s1)
+$ git add .
+warning: LF will be replaced by CRLF in file2d.
+The file will have its original line endings in your working directory.
+g
+sawan@LAPTOP-ETPIK87G MINGW64 ~/final (s1)
+$ git add .
+
+sawan@LAPTOP-ETPIK87G MINGW64 ~/final (s1)
+$ git commit -m "crateated new file in s1"
+[s1 aefa8f0] crateated new file in s1
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file2d
+
+sawan@LAPTOP-ETPIK87G MINGW64 ~/final (s1)
+$ git checkout B1
+Switched to branch 'B1'
+
+sawan@LAPTOP-ETPIK87G MINGW64 ~/final (B1)
+$ ls
+file1
+
+sawan@LAPTOP-ETPIK87G MINGW64 ~/final (B1)
+$ git branches
+
+sawan@LAPTOP-ETPIK87G MINGW64 ~/final (B1)
+$ git branch
+* B1
+  master
+  s1
+
+sawan@LAPTOP-ETPIK87G MINGW64 ~/final (B1)
+$ git merge s1
+Updating 3bc4bd6..aefa8f0
+Fast-forward
+ file2d | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file2d
+
+sawan@LAPTOP-ETPIK87G MINGW64 ~/final (B1)
+$ ls
+file1  file2d
+
+sawan@LAPTOP-ETPIK87G MINGW64 ~/final (B1)
+$ git checkout master
+Switched to branch 'master'
+
+sawan@LAPTOP-ETPIK87G MINGW64 ~/final (master)
+$ git log
+commit dc9f1a9eb3df0359583b1b6899e12cdda819aff5 (HEAD -> master)
+Author: iamsk97 <sawankashyap@gmail.com>
+Date:   Sat May 5 16:37:31 2018 +0530
+
+    1st commit in master file1
+
+sawan@LAPTOP-ETPIK87G MINGW64 ~/final (master)
+$ ls
+file1
+
+sawan@LAPTOP-ETPIK87G MINGW64 ~/final (master)
+$ vi file1
+
+sawan@LAPTOP-ETPIK87G MINGW64 ~/final (master)
+$ git add .
+warning: LF will be replaced by CRLF in file1.
+The file will have its original line endings in your working directory.
+
+sawan@LAPTOP-ETPIK87G MINGW64 ~/final (master)
+$ git commit -m "final commit on master"
+[master 556ed5a] final commit on master
+ 1 file changed, 1 insertion(+)
+
+sawan@LAPTOP-ETPIK87G MINGW64 ~/final (master)
+$ git merge B1
+Auto-merging file1
+CONFLICT (content): Merge conflict in file1
+Automatic merge failed; fix conflicts and then commit the result.
+
+sawan@LAPTOP-ETPIK87G MINGW64 ~/final (master|MERGING)
+$ vi file1
+
+sawan@LAPTOP-ETPIK87G MINGW64 ~/final (master|MERGING)
+$ git add .
+
+sawan@LAPTOP-ETPIK87G MINGW64 ~/final (master|MERGING)
+$ git commit -m "resolving commit"
+[master 88f144b] resolving commit
+
+sawan@LAPTOP-ETPIK87G MINGW64 ~/final (master)
+$ git log
+commit 88f144bc93fc21230bb384884869024ec8609767 (HEAD -> master)
+Merge: 556ed5a aefa8f0
+Author: iamsk97 <sawankashyap@gmail.com>
+Date:   Sat May 5 16:55:54 2018 +0530
+
+    resolving commit
+
+commit 556ed5a11f77a797dbbcf3fddd40122b0190e9e5
+Author: iamsk97 <sawankashyap@gmail.com>
+Date:   Sat May 5 16:54:28 2018 +0530
+
+    final commit on master
+
+commit aefa8f09924f0bacc6f2e67d29372276bbc807ed (s1, B1)
+Author: iamsk97 <sawankashyap@gmail.com>
+Date:   Sat May 5 16:47:59 2018 +0530
+
+    crateated new file in s1
+
+commit 3bc4bd62fdbf8a8de720236467af553a0f880a79
+Author: iamsk97 <sawankashyap@gmail.com>
+Date:   Sat May 5 16:43:54 2018 +0530
+
+    commit from branch b1
+
+commit dc9f1a9eb3df0359583b1b6899e12cdda819aff5
+Author: iamsk97 <sawankashyap@gmail.com>
+Date:   Sat May 5 16:37:31 2018 +0530
+
+    1st commit in master file1
+
+sawan@LAPTOP-ETPIK87G MINGW64 ~/final (master)
+$
